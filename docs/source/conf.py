@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'micropython-mela'
-copyright = '2024, bsn'
+copyright = '2024, Sergey Besedin, Andry Goloborodko, Oleg Wizner'
 author = 'bsn'
 release = '1'
 
