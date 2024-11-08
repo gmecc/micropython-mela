@@ -3,15 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-micropython-mela documentation
+Mela-PLC documentation
 ==============================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+``Mela-PLC`` is an open source controller based on
+``microPython`` for industrial use and projects IoT.
 
-test
-
+.. image:: /img/fig01.jpeg
 
 .. toctree::
    :maxdepth: 2

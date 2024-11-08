@@ -1,7 +1,7 @@
 General information about the Mela-PLC
 ========================================
 
-.. image:: /img/mela-board.jpg
+.. image:: /img/fig01.jpeg
 
 ``Mela-PLC`` is an open source controller based on
 ``microPython`` for industrial use and projects IoT.
@@ -22,15 +22,6 @@ makes the process of writing and debugging programs simple and visual.
 The numbering of the contacts of the ``Mela-PLC`` does not correspond
 to the numbering of the ESP32 controller. To establish the necessary
 contact numbers, a table of pins is provided.
-
-Application library ``mela``
-------------------------------
-
-The ``mela`` application library is designed to adapt known
-``micropython`` classes to the ``Mela-PLC`` configuration. When creating real projects,
-it is recommended to use the ``mela`` application
-library to avoid possible errors. However, the typical ``micropython`` libraries can also
-be used with careful parameter settings.
 
 Technical specifications
 ------------------------
@@ -75,7 +66,7 @@ https://github.com/gmecc/mela/blob/main/images/board-env.jpg
 MicroPython is implemented on top of the ESP-IDF, Espressif’s development framework for the ESP32.
 This is a FreeRTOS based system. See the ESP-IDF Programming Guide for details.
 
-GPIO table
+PIN table
 ----------
 
 .. csv-table::

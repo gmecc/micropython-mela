@@ -1,6 +1,15 @@
 MELA
 ====
 
+Application library ``mela``
+------------------------------
+
+The ``mela`` application library is designed to adapt known
+``micropython`` classes to the ``Mela-PLC`` configuration. When creating real projects,
+it is recommended to use the ``mela`` application
+library to avoid possible errors. However, the typical ``micropython`` libraries can also
+be used with careful parameter settings.
+
 The ``mela`` module contains specific functions related to the hardware on a particular board.
 To write portable code use functions and classes from the ``mela`` module.
 To access platform-specific hardware use the appropriate library.
