@@ -3,7 +3,7 @@ General information about the MELA-board
 
 .. image:: /img/mela-board.jpg
 
-``MELA-board`` является контроллером с открытым кодом на основе
+``MELA-board`` is an open source controller based on
 ``microPython`` for industrial use and projects IoT.
 
 ``MELA-board`` based on a microcontroller ESP32-S3 N32R8 Flash 16 MB
