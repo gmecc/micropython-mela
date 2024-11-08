@@ -8,7 +8,7 @@
 
 project = 'micropython-mela'
 copyright = '2024, Sergey Besedin, Andry Goloborodko, Oleg Wizner'
-author = 'bsn'
+author = 'Sergey Besedin, Andry Goloborodko, Oleg Wizner'
 release = '1'
 
 # -- General configuration ---------------------------------------------------

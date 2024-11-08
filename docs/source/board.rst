@@ -4,32 +4,33 @@ General information about the MELA-board
 .. image:: /img/mela-board.jpg
 
 ``MELA-board`` является контроллером с открытым кодом на основе
-``Python`` для промышленного использования и проектов IoT.
+``microPython`` for industrial use and projects IoT.
 
-``MELA-board`` выполнена на основе микроконтроллера ESP32-S3 N32R8V Flash 16 MB
-PSRAM 8 MB частота 240 MHz.
+``MELA-board`` based on a microcontroller ESP32-S3 N32R8 Flash 16 MB
+PSRAM 8 MB 240 MHz.
 
-``MELA-board`` для управления внешними устройствами имеет изолированные входы-выходы,
-порты обмена данными RS-485, RS-232, SPI, I2C, а также встоенный модуль WiFi.
+``MELA-board`` for controlling external devices has isolated inputs-outputs,
+data exchange ports RS-485, RS-232, SPI, I2C, and also a built-in module WiFi.
 
-Для визуального контроля и ручной настройки ``MELA-board`` имеет возможность
-подключения HMI по протоколам ``modbus RTU`` и ``modbus TCP``.
+For visual control and manual adjustment ``MELA-board`` has the ability
+to connect HMI according to protocols ``modbus RTU`` and ``modbus TCP``.
 
-Использование ``Python-платформы`` с открытым кодом для управления ``MELA-board``
-позволяет опираться в разработках на большое количество прикладных библиотек и
-делает процесс написания и отладки программ простым и наглядным.
+Using the open source ``Python platform`` to control ``MELA-board``
+allows you to rely on a large number of application libraries in your developments and
+makes the process of writing and debugging programs simple and visual.
 
-Нумерация контактов ``MELA-board`` не соответствует нумерации контроллера
-ESP32. Для установления необходимых номеров контактов приведена таблица пинов.
+The numbering of the contacts of the ``MELA-board`` does not correspond
+to the numbering of the ESP32 controller. To establish the necessary
+contact numbers, a table of pins is provided.
 
-Прикладная библиотека ``mela``
+Application library ``mela``
 ------------------------------
 
-Прикладная библиотека ``mela`` предназначена для адаптации известных классов
-``micropython`` под конфигурацию ``MELA-board``. При создании реальных проектов
-для избежания возможных ошибок рекомендуется пользоваться прикладной
-библиотекой ``mela``. Однако, типовые библиотеки ``micropython`` также можно
-использовать при внимательной настройке параметров.
+The ``mela`` application library is designed to adapt known
+``micropython`` classes to the ``MELA-board`` configuration. When creating real projects,
+it is recommended to use the ``mela`` application
+library to avoid possible errors. However, the typical ``micropython`` libraries can also
+be used with careful parameter settings.
 
 Technical specifications
 ------------------------
@@ -44,14 +45,14 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 
 **MELA F1**
 
-- Processor: Espressif ESP32-S3R16V:
+- Processor: Espressif ESP32-S3N16R8:
     - Architecture: Xtensa Dual-Core 32-bit LX7
     - RISC-V Ultra Low Power Co-processor
     - CPU frequency: up to 240MHz
     - Internal FlashROM: 16MB
     - External FlashROM: Octal SPI PSRAM 8MB
     - WiFi: 2.4GHz Wifi - 802.11b/g/n, 3D High Gain Antenna
-- RTC: DS1307 with a CR1220 coin cell battery
+- RTC: DS1307 with a CR2032 coin cell battery
 - ADC: 16-bit delta-sigma ADC ADS1115 up to 4 differentials channels 860SPS [0-10V / 0-20mA]
 - Digital Input: 8 Digital Isolated Input [0-24V]
 - Didital Output: 10; 6 PWM - Digital Isolated Output OC [0-24V 2A]; 4 Relay [250V 5A]
@@ -61,7 +62,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 - I2C: I2C Isolated input
 - RS-232: UART1
 - RS-485: UART2
-- Board Indicator: Low power RGB LED PL9823 совместимая
+- Board Indicator: Low power RGB LED PL9823 compatible
 - Reset: ON/OFF button, Outer Reset Connector
 - Boot: ON/OFF button
 - Power: 10-24V 4W Power Pin / 5V 800mA USB
