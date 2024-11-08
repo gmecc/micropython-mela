@@ -1,4 +1,4 @@
-General information about the Mela-PLC
+Information about the Mela-PLC
 ========================================
 
 .. image:: /img/fig01.jpeg
@@ -34,7 +34,7 @@ operating modes, internal functioning, etc.
 
 For your convenience, below are some technical characteristics of ``Mela-PLC``:
 
-**MELA F1**
+**Mela-PLC F1**
 
 - Processor: Espressif ESP32-S3N16R8:
     - Architecture: Xtensa Dual-Core 32-bit LX7
@@ -142,6 +142,8 @@ PIN table
 * *P*: Power supply;
 * *AI*: Analog Input
 
-**About the authors**
+Jumpers settings table
+----------------------
 
-Sergey Besedin, Andry Goloborodko, Oleg Wizner
+
+

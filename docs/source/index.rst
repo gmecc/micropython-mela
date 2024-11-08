@@ -15,4 +15,5 @@ Mela-PLC documentation
    :maxdepth: 2
 
    board
+   functions
    soft

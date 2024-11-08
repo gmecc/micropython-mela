@@ -1,8 +1,5 @@
-MELA
-====
-
 Application library ``mela``
-------------------------------
+============================
 
 The ``mela`` application library is designed to adapt known
 ``micropython`` classes to the ``Mela-PLC`` configuration. When creating real projects,
