@@ -1,7 +1,7 @@
 Information about the Mela-PLC
 ========================================
 
-.. image:: /img/fig01.jpeg
+.. image:: /img/MELA-PLC_Assembly.jpg
 
 ``Mela-PLC`` is an open source controller based on
 ``microPython`` for industrial use and projects IoT.
