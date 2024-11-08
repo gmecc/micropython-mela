@@ -17,3 +17,4 @@ test
    :maxdepth: 2
 
    board
+   soft
