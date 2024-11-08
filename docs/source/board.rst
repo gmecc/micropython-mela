@@ -1,25 +1,25 @@
-General information about the MELA-board
+General information about the Mela-PLC
 ========================================
 
 .. image:: /img/mela-board.jpg
 
-``MELA-board`` is an open source controller based on
+``Mela-PLC`` is an open source controller based on
 ``microPython`` for industrial use and projects IoT.
 
-``MELA-board`` based on a microcontroller ESP32-S3 N32R8 Flash 16 MB
+``Mela-PLC`` based on a microcontroller ESP32-S3 N32R8 Flash 16 MB
 PSRAM 8 MB 240 MHz.
 
-``MELA-board`` for controlling external devices has isolated inputs-outputs,
+``Mela-PLC`` for controlling external devices has isolated inputs-outputs,
 data exchange ports RS-485, RS-232, SPI, I2C, and also a built-in module WiFi.
 
-For visual control and manual adjustment ``MELA-board`` has the ability
+For visual control and manual adjustment ``Mela-PLC`` has the ability
 to connect HMI according to protocols ``modbus RTU`` and ``modbus TCP``.
 
-Using the open source ``Python platform`` to control ``MELA-board``
+Using the open source ``Python platform`` to control ``Mela-PLC``
 allows you to rely on a large number of application libraries in your developments and
 makes the process of writing and debugging programs simple and visual.
 
-The numbering of the contacts of the ``MELA-board`` does not correspond
+The numbering of the contacts of the ``Mela-PLC`` does not correspond
 to the numbering of the ESP32 controller. To establish the necessary
 contact numbers, a table of pins is provided.
 
@@ -27,7 +27,7 @@ Application library ``mela``
 ------------------------------
 
 The ``mela`` application library is designed to adapt known
-``micropython`` classes to the ``MELA-board`` configuration. When creating real projects,
+``micropython`` classes to the ``Mela-PLC`` configuration. When creating real projects,
 it is recommended to use the ``mela`` application
 library to avoid possible errors. However, the typical ``micropython`` libraries can also
 be used with careful parameter settings.
@@ -41,7 +41,7 @@ from the vendor site: https://www.espressif.com/en/products/socs/esp32-s3.
 They are the primary reference for the chip technical specifications, capabilities,
 operating modes, internal functioning, etc.
 
-For your convenience, below are some technical characteristics of ``MELA-board``:
+For your convenience, below are some technical characteristics of ``Mela-PLC``:
 
 **MELA F1**
 
@@ -69,7 +69,7 @@ For your convenience, below are some technical characteristics of ``MELA-board``
 
 The board can be powered from a USB connectors with a voltage of 5 volts.
 
-For more information see the MELA-board datasheet:
+For more information see the Mela-PLC datasheet:
 https://github.com/gmecc/mela/blob/main/images/board-env.jpg
 
 MicroPython is implemented on top of the ESP-IDF, Espressif’s development framework for the ESP32.
@@ -151,6 +151,6 @@ GPIO table
 * *P*: Power supply;
 * *AI*: Analog Input
 
-## About the authors
+**About the authors**
 
 Sergey Besedin, Andry Goloborodko, Oleg Wizner
