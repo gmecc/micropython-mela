@@ -17,3 +17,4 @@ Mela-PLC documentation
    board
    functions
    soft
+   store
