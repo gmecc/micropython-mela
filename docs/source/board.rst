@@ -147,7 +147,8 @@ Jumper description
 -------------------
 
 Jumper location
-----------------
+^^^^^^^^^^^^^^^
+
 See figure below
 
 
