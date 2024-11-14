@@ -142,8 +142,175 @@ PIN table
 * *P*: Power supply;
 * *AI*: Analog Input
 
-Jumpers settings table
-----------------------
 
+Jumper description
+-------------------
+
+Jumper location
+----------------
+See figure below
+
+
+Analog input jumpers
+^^^^^^^^^^^^^^^^^^^^^
+
+The device has four analog inputs located in the upper left corner. Analog inputs are marked as "AIx" (x=0..3).
+Each analog input can be configured using four jumpers (J1..J4).
+
+
+1. Resistance measurement input (voltage measurement with current source).
+2. 0..24 mA input.
+3. 0..10V input.
+
+
+Two current source values are available: 0.5 mA and 10 uA.
+There are three jumpers on each channel to select the operating mode for the analog inputs (see table below):
+
++---+-----+-----+----------------------+
+| J1|J2   |J3   |Operation mode        |
++===+=====+=====+======================+
+| \+|  \- | \-  |Resistance measurement|
++---+-----+-----+----------------------+
+| \-|  \+ | \-  |0..24 mA              |
++---+-----+-----+----------------------+
+| \-| \-  | \+  |0..10 V               |
++---+-----+-----+----------------------+
+
+
+The 4th jumper definites current value of current source. If J1 is not installed J4 doesn't influate to analog input operation. R [*]
+
++-----+--------------+------------+
+| J4  | Current value| Max. R [*]_|
++=====+==============+============+
+|Set  |0.5 mA        |4 kOhm      |
++-----+--------------+------------+
+|Unset|10 uA         |200 kOhm    |
++-----+--------------+------------+
+
+.. [*] FSR=2048mV (see ADS1115 datasheet)
+
+
+PWM output jumpers
+^^^^^^^^^^^^^^^^^^^^^
+
+Jumper defines output state for PWM outputs **when MCU is stopped**. On the PCBA the jumpers are marked "PWM INPUT PULL-UP JUMPER". If the jumper is set, the corresponding output will have a logic "1" state. If the jumper is unset, the corresponding output will have a logic "0" state.
+See schematic for details.
+
++-------------+-----------------------+
+| PWMx Jumper | PWMx output state [*]_|
++=============+=======================+
+| Set         | 1                     |
++-------------+-----------------------+
+| Unset       | 0                     |
++-------------+-----------------------+
+
+.. [*] When the MCU is stopped or the corresponding pin is configured as an input without pull-up or pull-down.
+
+
+Relay output jumpers
+^^^^^^^^^^^^^^^^^^^^^^
+
+Jumper defines relay state (open/close) **when MCU is stopped**. On the PCBA the jumpers are marked "RELAY INPUT PULL-UP JMP". If the jumper is set, the corresponding relay will be ON. If the jumper is unset, the corresponding relay will be OFF.
+See schematic for details.
+
++-------------+-----------------+
+| PWMx Jumper | Relay state [*]_|
++=============+=================+
+| Set         | ON              |
++-------------+-----------------+
+| Unset       | OFF             |
++-------------+-----------------+
+
+.. [*] When the MCU is stopped or the corresponding pin is configured as an input without pull-up or pull-down.
+
+DI jumpers
+^^^^^^^^^^^
+
+DI0..DI3 can operate in two modes:
+
+1. 0..24V with Vil=1V and Vih=4.5V.
+2. 0..5V with Vil=0.5V and Vih=2.25V.
+
+If the DIx jumper is set, the second mode (0..5V) is selected.
+
++-----------+------+-----+-----+
+| DIx Jumper|Mode  |Vil  |Vih  |
++===========+======+=====+=====+
+| Unset     |0..5V |0.5V |2.25V|
++-----------+------+-----+-----+
+| Set       |0..24V|1V   |4.5V |
++-----------+------+-----+-----+
+
+|
+
+DIO Jumpers
+^^^^^^^^^^^^
+
+The device has three open-drain isolated DIOs. The isolated part can be powered from the external power source, which must be connected to the "V+" and "GND" contacts, or from the internal power source. The power source (external/internal) and the value of the internal source voltage are selected by jumpers "3V3" and "5V" as described in the table below:
+
++-------------+-----------+------------+----------------------+
+| Jumper "3V3"|Jumper "5V"|Power source|Power source Voltage  |
++=============+===========+============+======================+
+|Unset        |Unset      |External    |Defines by external   |
+|             |           |            |power source (3..5.5V)|
++-------------+-----------+------------+----------------------+
+|Set          |Unset      |Internal    |3.3V                  |
++-------------+-----------+------------+----------------------+
+|Unset        |Set        |Internal    |5V                    |
++-------------+-----------+------------+----------------------+
+|Set          |Set        |            |**FORBIDDEN**         |
++-------------+-----------+------------+----------------------+
+
+All the DIOs have a common power source.
+
+It is possible to pull up the DIOs with a 3 kOhm resistor. If pull-up is required, the corresponding jumper marked **"3K PULL UP"** must be set (jumper connects DIOx to "V+" via 3 kOhm resistor).
+
+I2C Jumpers
+^^^^^^^^^^^
+
+The device has isolated I2C intefrace. The isolated part can be powered from the external power source, which must be connected to the "V+" and "GND" contacts, or from the internal power source. The power source (external/internal) and the value of the internal source voltage are selected by jumpers "3V3" and "5V" as described in the table below:
+
++-------------+-----------+------------+----------------------+
+| Jumper "3V3"|Jumper "5V"|Power source|Power source Voltage  |
++=============+===========+============+======================+
+|Unset        |Unset      |External    |Defines by external   |
+|             |           |            |power source (3..5.5V)|
++-------------+-----------+------------+----------------------+
+|Set          |Unset      |Internal    |3.3V                  |
++-------------+-----------+------------+----------------------+
+|Unset        |Set        |Internal    |5V                    |
++-------------+-----------+------------+----------------------+
+|Set          |Set        |            |**FORBIDDEN**         |
++-------------+-----------+------------+----------------------+
+
+It is possible to pull up the lines with a 3 kOhm resistor. If pull-up is required, the corresponding jumper marked **"3K PULL UP"** must be set (jumper connects DIOx to "V+" via 3 kOhm resistor).
+
+RS-485 "120 Ohm" jumper
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+This jumper connects a 120 ohm resistor between the A and B lines.
+
+
+UART0 Pin Header
+^^^^^^^^^^^^^^^^^
+
+By default, UART0 of the MCU is connected to the USB-C header via CH340 and the jumpers marked "RX" and "TX" are set. If a variation of UART0 connection is required, the jumpers must be unset and pins '3V3', 'GND', 'RX' and 'TX' can be used for connection to UART0. The 'RX' and 'TX' pins are connected directly to the MCU pins. See datasheet for details.
+
+I2C and additional non-isolated 3.3V CMOS level IOs header
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The device has an internal non-isolated I2C interface which can be used for connection via the I2C pin header marked "GND", "3V3", "SCL", "SDA". If required, an additional I2C device can be connected to the MCU via this header (e.g. LCD display).
+Pins "P4", "P5", "P6", "P7" are connected to the IO expander pins and can be used as non-isolated IOs (e.g. for keyboard connection).
+The pinout of this header is the same as standard LCD display boards with keyboard for Arduino.
+
+DRDY-DI6 jumper
+^^^^^^^^^^^^^^^^
+
+This jumper connects the DRDY pin of the ADS1115 (ADC) to the pin of the MCU corresponding to DI6. It is used when a DRDY signal from the ADC is required . If this jumper is set, the "DI6" contact of the device's input connector must be unconnected.
+
+INT-DI7 jumper
+^^^^^^^^^^^^^^^
+
+This jumper connects the INT pin of the IO expander to the pin of the MCU corresponding to DI7. It is used when an INT signal from the IO expander is required . If this jumper is set, the "DI7" contact of the device's input connector must be unconnected.
 
 
